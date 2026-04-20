@@ -17,8 +17,14 @@ app.use(cors());
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "assets", "images")));
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(()=>console.log("DB connected"));
+// Connect to MongoDB if URI is provided and valid
+if (process.env.MONGO_URI && process.env.MONGO_URI.startsWith("mongodb")) {
+  mongoose.connect(process.env.MONGO_URI)
+    .then(()=>console.log("DB connected"))
+    .catch(err => console.log("MongoDB connection error:", err.message));
+} else {
+  console.log("MongoDB URI not configured - database features disabled");
+}
 
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);

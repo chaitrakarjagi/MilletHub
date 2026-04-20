@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "seed:whole": "node seedWholeMillet.js",
+    "seed:flour": "node seedFlourMillet.js",
+    "seed:users": "node seedUsers.js"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^6.0.1",

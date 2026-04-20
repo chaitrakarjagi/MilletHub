@@ -13,7 +13,8 @@ export default function Navbar(){
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl">🛒</span>
+            {/* <span className="text-2xl">🛒 🌾 </span> */}
+            {/* <span className="text-2xl"><img src="/images/millethub.png" alt="MilletHub" className="inline-block h-20 md:h- ml-2" /></span> */}
             <span className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
               MilletHub
             </span>
@@ -21,6 +22,18 @@ export default function Navbar(){
 
           {/* Navigation Links */}
           <div className="flex items-center space-x-6">
+            <Link
+              to="/whole-millet"
+              className="text-gray-700 hover:text-blue-600 transition-colors text-sm font-medium"
+            >
+              Whole Millet
+            </Link>
+            <Link
+              to="/flour-millet"
+              className="text-gray-700 hover:text-blue-600 transition-colors text-sm font-medium"
+            >
+              Flour Millet
+            </Link>
             {/* Cart Link with Badge */}
             <Link
               to="/cart"
@@ -42,10 +55,10 @@ export default function Navbar(){
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
                   <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-medium">
-                    {user.user?.name?.charAt(0)?.toUpperCase() || user.user?.email?.charAt(0)?.toUpperCase() || 'U'}
+                    {user.user?.email?.charAt(0)?.toUpperCase() || 'U'}
                   </div>
                   <span className="text-gray-700 hidden sm:block">
-                    {user.user?.name || user.user?.email}
+                    {user.user?.email}
                   </span>
                 </div>
                 <button
@@ -58,7 +71,7 @@ export default function Navbar(){
             ) : (
               <div className="flex items-center space-x-3">
                 <Link
-                  to="/register"
+                  to="/signup"
                   className="text-gray-700 hover:text-blue-600 transition-colors text-sm font-medium"
                 >
                   Sign Up

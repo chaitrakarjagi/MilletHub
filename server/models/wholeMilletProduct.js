@@ -14,4 +14,4 @@ const schema = new mongoose.Schema({
   }
 });
 
-export default mongoose.model("Product", schema);
+export default mongoose.model("WholeMilletProduct", schema);
