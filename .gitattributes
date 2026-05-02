@@ -1,0 +1,15 @@
+# Auto detect text files and normalize line endings to LF
+* text=auto
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.jar binary
+
+# Ensure shell scripts and binaries maintain execute permissions
+*.sh eol=lf
+*.bash eol=lf
