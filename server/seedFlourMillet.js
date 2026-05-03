@@ -6,16 +6,18 @@ console.log("Starting seed script...");
 dotenv.config();
 console.log("Loaded dotenv");
 
+const BASE_URL = "https://millethub-3sa5.onrender.com";
+
 const flourMilletProducts = [
-  { title: "Araka Flour", price: 200, image: "http://localhost:5000/images/arakaflour.jpg", category: "flour-millet" },
-  { title: "Baragu Flour", price: 200, image: "http://localhost:5000/images/baraguflour.jpg", category: "flour-millet" },
-  { title: "Broken Jowara", price: 200, image: "http://localhost:5000/images/brokenjowar.jpg", category: "flour-millet" },
-  { title: "Broken Wheat", price: 200, image: "http://localhost:5000/images/brokenwheat.jpg", category: "flour-millet" },
-  { title: "Jowar Flour", price: 200, image: "http://localhost:5000/images/JowarFlour.jpg", category: "flour-millet" },
-  { title: "Navane Flour", price: 200, image: "http://localhost:5000/images/navaneflour.jpg", category: "flour-millet" },
-  { title: "Ragi Flour", price: 200, image: "http://localhost:5000/images/ragiflour.jpg", category: "flour-millet" },
-  { title: "Sajji Flour", price: 200, image: "http://localhost:5000/images/sajjiflour.jpg", category: "flour-millet" },
-  { title: "Wheat Flour", price: 200, image: "http://localhost:5000/images/wheatflour.jpeg", category: "flour-millet" }
+  { title: "Araka Flour", price: 200, image: `${BASE_URL}/images/arakaflour.jpg`, category: "flour-millet" },
+  { title: "Baragu Flour", price: 200, image: `${BASE_URL}/images/baraguflour.jpg`, category: "flour-millet" },
+  { title: "Broken Jowara", price: 200, image: `${BASE_URL}/images/brokenjowar.jpg`, category: "flour-millet" },
+  { title: "Broken Wheat", price: 200, image: `${BASE_URL}/images/brokenwheat.jpg`, category: "flour-millet" },
+  { title: "Jowar Flour", price: 200, image: `${BASE_URL}/images/JowarFlour.jpg`, category: "flour-millet" },
+  { title: "Navane Flour", price: 200, image: `${BASE_URL}/images/navaneflour.jpg`, category: "flour-millet" },
+  { title: "Ragi Flour", price: 200, image: `${BASE_URL}/images/ragiflour.jpg`, category: "flour-millet" },
+  { title: "Sajji Flour", price: 200, image: `${BASE_URL}/images/sajjiflour.jpg`, category: "flour-millet" },
+  { title: "Wheat Flour", price: 200, image: `${BASE_URL}/images/wheatflour.jpeg`, category: "flour-millet" }
 ];
 
 mongoose.connect(process.env.MONGO_URI)

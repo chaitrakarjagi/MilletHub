@@ -55,8 +55,8 @@ router.post("/", async (req, res) => {
         quantity: 1
       }],
       mode: "payment",
-      success_url: "http://localhost:5173/payment-success",
-      cancel_url: "http://localhost:5173/cart"
+      success_url: `${process.env.CLIENT_URL || "https://millethub-3sa5.onrender.com"}/payment-success`,
+      cancel_url: `${process.env.CLIENT_URL || "https://millethub-3sa5.onrender.com"}/cart`
     });
 
     res.json({ url: session.url });
