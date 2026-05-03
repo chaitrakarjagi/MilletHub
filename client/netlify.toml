@@ -10,3 +10,7 @@
 [dev]
   command = "npm run dev"
   port = 3000
+
+[context.production.environment]
+  VITE_API_BASE_URL = "https://millethub-3sa5.onrender.com/api"
+
