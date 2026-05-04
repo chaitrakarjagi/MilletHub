@@ -6,11 +6,17 @@ const router = express.Router();
 const defaultImage = "https://via.placeholder.com/400x300?text=Product+Image";
 
 const formatProducts = (products, host) => products.map(product => {
-  const imageUrl = product.image
-    ? product.image.startsWith("http")
-      ? product.image
-      : `${host}${product.image}`
-    : defaultImage;
+  let imageUrl = defaultImage;
+
+  if (product.image) {
+    if (product.image.startsWith("http")) {
+      imageUrl = product.image.includes("localhost:5000") || product.image.includes("127.0.0.1:5000")
+        ? product.image.replace(/https?:\/\/(?:localhost|127\.0\.0\.1):5000/, host)
+        : product.image;
+    } else {
+      imageUrl = `${host}${product.image}`;
+    }
+  }
 
   return {
     ...product,
